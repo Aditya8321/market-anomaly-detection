@@ -1,0 +1,32 @@
+data:
+  universe_config: "configs/universe.yaml"
+  cache_path: "data/raw/adj_close.csv"
+
+features:
+  vol_window: 20
+  vol_long_window: 60
+  volume_window: 20
+  range_window: 20
+  min_history: 120
+
+models:
+  zscore:
+    ret_z_thresh: 3.0
+    vol_z_thresh: 3.0
+    volu_z_thresh: 3.0
+  isolation_forest:
+    contamination: 0.01
+    n_estimators: 400
+    random_state: 42
+
+monitoring:
+  score_ensemble:
+    w_zscore: 0.4
+    w_iforest: 0.6
+  top_k_daily: 5
+
+evaluation:
+  horizons_days: [1, 5, 20]
+
+outputs:
+  base_dir: "outputs"

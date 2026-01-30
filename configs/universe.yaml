@@ -1,0 +1,12 @@
+tickers:
+  - SPY
+  - QQQ
+  - IWM
+  - TLT
+  - GLD
+  - HYG
+  - XLF
+  - XLK
+
+start: "2010-01-01"
+end: null
